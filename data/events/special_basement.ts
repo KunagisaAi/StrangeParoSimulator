@@ -6,6 +6,7 @@ export const SPECIAL_BASEMENT_EVENTS: GameEvent[] = [
       权重: 40,
       可触发次数: -1,
       标签组: [
+        '日常',
         '训练'
       ],
       触发条件: '当前角色.模板ID == "特别周" && 当前角色.属性.体力 > 10',
@@ -19,7 +20,8 @@ export const SPECIAL_BASEMENT_EVENTS: GameEvent[] = [
       权重: 1,
       可触发次数: 1,
       标签组: [
-        '个人剧情'
+        '个人剧情',
+        '赌狗'
       ],
       触发条件: '当前角色.模板ID == "特别周" && 当前角色.标签组 不存在 "赌狗"',
       标题: '',
@@ -29,7 +31,7 @@ export const SPECIAL_BASEMENT_EVENTS: GameEvent[] = [
     },
     {
       id: 'special_getlost',
-      权重: 1,
+      权重: 10,
       可触发次数: -1,
       标签组: [
         '个人剧情'
@@ -59,6 +61,7 @@ export const SPECIAL_BASEMENT_EVENTS: GameEvent[] = [
       权重: 15,
       可触发次数: -1,
       标签组: [
+        '个人剧情',
         '暧昧'
       ],
       触发条件: '当前角色.标签组 存在 "训练员" && 特别周.在队伍 == true && 特别周.关系.玩家.友情 > 20',
@@ -106,7 +109,8 @@ export const SPECIAL_BASEMENT_EVENTS: GameEvent[] = [
       权重: 1,
       可触发次数: -1,
       标签组: [
-        '性'
+        '性',
+        'R18'
       ],
       触发条件: 'false',
       标题: '',
@@ -119,7 +123,8 @@ export const SPECIAL_BASEMENT_EVENTS: GameEvent[] = [
       权重: 600,
       可触发次数: 1,
       标签组: [
-        '个人剧情'
+        '个人剧情',
+        '夏日'
       ],
       触发条件: '当前角色.标签组 存在 "训练员" && 特别周.在队伍 == true && 特别周.关系.玩家.友情 > 40  && (当前月 == 7 || 当前月 == 8)',
       标题: '盛夏的新衣',
@@ -145,7 +150,8 @@ export const SPECIAL_BASEMENT_EVENTS: GameEvent[] = [
       可触发次数: 1,
       标签组: [
         '个人剧情',
-        '修罗场'
+        '修罗场',
+        '夏日'
       ],
       触发条件: '当前角色.标签组 存在 "训练员" && 特别周.在队伍 == true && 特别周.关系.玩家.爱情 > 40  && (当前月 == 7 || 当前月 == 8) && 已触发事件.special_swimwear > 0',
       标题: '盛夏的视线',
@@ -206,7 +212,7 @@ export const SPECIAL_BASEMENT_EVENTS: GameEvent[] = [
       可触发次数: -1,
       标签组: [
         '个人剧情',
-        '性'
+        '暧昧'
       ],
       触发条件: '当前角色.标签组 存在 "训练员" && 特别周.在队伍 == true && 特别周.关系.玩家.爱情 > 60 && 特别周.属性.爱欲 > 75 && 已触发事件.special_swimwear_satisified > 0',
       标题: '盛夏的余韵',
@@ -240,7 +246,8 @@ export const SPECIAL_BASEMENT_EVENTS: GameEvent[] = [
       权重: 1,
       可触发次数: 1,
       标签组: [
-        '性'
+        '性',
+        'R18'
       ],
       触发条件: 'false',
       标题: '',
