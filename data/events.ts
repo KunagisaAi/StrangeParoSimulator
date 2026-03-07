@@ -8,6 +8,7 @@ import { SEASONAL_EVENTS } from './events/seasonal';
 import { ENDING_EVENTS } from './events/endings';
 import { TEIO_BASEMENT_EVENTS } from './events/teio_basement';
 import { SPECIAL_BASEMENT_EVENTS } from './events/special_basement';
+import { SYSTEM_EVENTS_EXTRA } from './events/system_extra';
 
 // ===========================
 // 事件聚合 (Events Aggregation)
@@ -21,6 +22,7 @@ export const EVENTS: GameEvent[] = [
   ...SYSTEM_EVENTS,
   ...TEIO_BASEMENT_EVENTS,
   ...SPECIAL_BASEMENT_EVENTS,
+  ...SYSTEM_EVENTS_EXTRA,
 ];
 
 export { ENDING_EVENTS };

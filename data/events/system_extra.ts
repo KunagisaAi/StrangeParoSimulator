@@ -1,6 +1,6 @@
 import { GameEvent } from '../../types';
 
-export const NEW_EVENTS: GameEvent[] = [
+export const SYSTEM_EVENTS_EXTRA: GameEvent[] = [
     {
       id: 'school_getlost',
       权重: 5,
