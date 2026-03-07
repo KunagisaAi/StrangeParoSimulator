@@ -487,6 +487,14 @@ export const executeAction = (
                         const val = variables[varName];
                         output = `[变量] ${varName} = ${val !== undefined ? (typeof val === 'object' ? val.名称 : val) : '未定义'}`;
                     } 
+                    else if (expr.includes('全局事件标签触发次数')) {
+                        const val = evalValue(expr, variables, subject, allChars);
+                        output = `[全局标签触发次数] ${expr} = ${val}`;
+                    }
+                    else if (expr.includes('事件标签触发次数')) {
+                        const val = evalValue(expr, variables, subject, allChars);
+                        output = `[角色标签触发次数] ${expr} = ${val}`;
+                    }
                     // Try to resolve as a character property or relationship
                     else if (expr.includes('.')) {
                         const parts = expr.split('.');
@@ -521,6 +529,14 @@ export const executeAction = (
                                         output = `[关系] ${target.名称} -> ${relTarget.名称} (${relType}) = ${rel}`;
                                     } else {
                                         output = `[错误] 未找到关系目标: ${relTargetName}`;
+                                    }
+                                } else if (parts[1].startsWith('标签组(')) {
+                                    const tagId = parts[1].match(/标签组\(([^)]+)\)/)?.[1] || '';
+                                    const tag = target.标签组.find(t => t.templateId === tagId);
+                                    if (parts[2] === '层数') {
+                                        output = `[标签] ${target.名称}.${tagId}(层数) = ${tag ? tag.层数 : 0}`;
+                                    } else {
+                                        output = `[标签] ${target.名称}.${tagId} = ${tag ? '存在' : '不存在'}`;
                                     }
                                 } else if (parts[1] === '标签组' && parts[2]) {
                                     const tagId = parts[2].replace(/[()]/g, '');
