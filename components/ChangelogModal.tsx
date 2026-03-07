@@ -7,6 +7,14 @@ interface ChangelogModalProps {
 
 const CHANGELOG_DATA = [
   {
+    version: '0.2.260307a',
+    date: '2026-03-07',
+    changes: [
+      '新增：Genesis撰写的13个事件。',
+      '调整：部分文案细节。',
+    ]
+  },
+  {
     version: '0.2.260301a',
     date: '2026-03-01',
     changes: [
